@@ -8,6 +8,7 @@ import VendorForm from "./Pages/VendorForm";
 import FindProject from "./Pages/FindProject";
 import CreateAccountTwo from "./Pages/CreateAccountTwo";
 import AllDetails from "./Pages/AllDetails";
+import Login from "./Pages/Login";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/vendorform" element={<VendorForm />} />
         <Route path="/findproject" element={<FindProject />} />
         <Route path="/alldetails" element={<AllDetails />} />
+        <Route path="/signin" element={<Login />} />
       </Routes>
     </Router>
   );
