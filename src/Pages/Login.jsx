@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  //   const [input, setInput] = {
-  //     username: "",
-  //     password: "",
-  //   };
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+  });
 
-  //   const handelSumitevent = (e) => {
-  //     e.preventDefault();
-  //     if (input.username !== "" && input.password !== "") {
-  //       //dispatch actuion from hooks
-  //     }
-  //     alert("Please provide a valid input");
-  //   };
+  const handelSumitevent = (e) => {
+    e.preventDefault();
+    if (input.username !== "" && input.password !== "") {
+      //dispatch action from hooks
+    }
+    alert("Please provide a valid input");
+  };
 
-  //   const handleInput = (e) => {
-  //     const { name, value } = e.target;
-  //     setInput((prev) => ({
-  //       ...prev,
-  //       [name]: value,
-  //     }));
-  //   };
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
   return (
     <div>
       <section class="bg-gray-50 dark:bg-gray-900">
@@ -42,7 +43,7 @@ const Login = () => {
                 Sign in to your account
               </h1>
               <form
-                // onSubmit={handelSumitevent}
+                onSubmit={handelSumitevent}
                 class="space-y-4 md:space-y-6"
                 action="#"
               >
@@ -60,7 +61,7 @@ const Login = () => {
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="name@company.com"
                     required=""
-                    // onChange={handleInput}
+                    onChange={handleInput}
                   />
                   <div id="user-email" className="sr-only">
                     Please enter a vlide username.It must contain at least 6
@@ -81,7 +82,7 @@ const Login = () => {
                     placeholder=""
                     class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
-                    // onChange={handleInput}
+                    onChange={handleInput}
                   />
                   <div id="password" className="sr-only">
                     Your password should contain at least 6 characters
@@ -122,12 +123,12 @@ const Login = () => {
                 </button>
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
-                  <a
-                    href="#"
+                  <Link
+                    to="/createAccount"
                     class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Sign up
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>
